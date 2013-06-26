@@ -1,0 +1,34 @@
+{
+"name" :"Email Extractor",
+"version" :"1.0",
+"manifest_version": 2,
+"description" :"Extract Email from any website",
+"options_page":"options.html",
+"browser_action" :
+    {
+        "default_icon": "img/icon_48_48.png",
+        "default_title": "Email Extractor",
+        "default_popup" :"popup.html"
+    },
+    
+    "content_scripts": [
+    {
+      "all_frames": true,
+      "matches": ["http://*/*","https://*/*"],
+      "js": ["lib/jquery.js", "content.js"]
+    }
+  ],
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "permissions": [
+    "http://*/*", "https://*/*", 
+    "tabs",  "notifications"
+  ],
+
+  "web_accessible_resources": [
+    "img/icon_48_48.png"
+  ]
+}

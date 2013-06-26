@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+  <head>	
+	<link href="lib/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+	<link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+	<script src="lib/jquery.js"></script>
+	<script src="lib/bootstrap/js/bootstrap.js"></script>
+
+    <script src="popup.js">console.log(extractEmails()); </script>
+  </head>
+	<body>
+  		<br/>
+  		<p> Please complete the informations related to extracted email address: </p>
+  		<br/>
+  	
+  		<br/>
+  		
+	  	<form class="form-horizontal" method="POST" action="https://docs.google.com/forms/d/1wOx4I8Y1fqQf_dlZ76T6-cAxgSieMhD-Ij9Ujcec4FI/formResponse?embedded=true"
+      >
+	  		<div class="control-group">
+    			<label class="control-label" for="contactEmail">Email</label>
+	    		<div class="controls">
+            <div class="input-prepend">
+              <span class="add-on"><i class="icon-envelope"></i></span>
+      				<input type="text" name="entry.971910274" class="input-xlarge" required id="contactEmail" placeholder="Email">
+    			   </div>
+          </div>
+
+  			</div>
+  			<div class="control-group">
+    			<label class="control-label" for="source">source</label>
+    			<div class="controls">
+      				<input type="text" name="entry.1047359638" id="source">
+    			</div>
+  			</div>
+  			<div class="control-group">
+    			<label class="control-label" for="contactName">Contact Name</label>
+    			<div class="controls">
+      				<input type="text" name="entry.1832343487" id="contactName" placeholder="Contact Name">
+    			</div>
+  			</div>
+  			<div class="control-group">
+    			<label class="control-label" for="contactAddress">Contact Address</label>
+    			<div class="controls">
+      				<textarea name="entry.439068374" rows="3" id="contactAddress" placeholder="Contact Address"></textarea>
+    			</div>
+  			</div>
+  			<div class="control-group">
+    			<label class="control-label" for="contactPhoneNumber">Contact Phone</label>
+    			<div class="controls">
+      				<input type="text" name="entry.1461478089" class="input-xlarge" id="contactPhoneNumber" placeholder="Contact Phone">
+    			</div>
+  			</div>
+  			<div class="control-group">
+    			<label class="control-label" for="contactWebsite">Website</label>
+    			<div class="controls">
+              <label class="checkbox">
+                <input id="copyFromSourceToWebsite" type="checkbox"> </input> Same as Source
+              </label>
+      				<input type="text" name="entry.537945632" id="contactWebsite">
+    			</div>
+  			</div>
+
+  			<div class="control-group">
+    			<label class="control-label" for="comments">Notes/Comments</label>
+    			<div class="controls">
+      				<textarea name="entry.145057968" rows="3"id="comments" placeholder="Notes/comments"></textarea>
+    			</div>
+  			</div>
+			<div class="form-actions">
+  				<button id="save" type="submit" class="btn btn-primary">Save to Spreadsheet</button>
+			</div>
+		</form>
+	</body>
+</html>
+
+
+
+
+
+

@@ -2,13 +2,13 @@
 function extractEmails()
 {
 	var emailRegex = /\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/igm;
-    return $('body').html().match(emailRegex);
+    return jQuery.unique( $('body').html().match(emailRegex) );
 }
 
 function extractPhoneNumbers()
 {	
-	var phoneNumberRegex = /0[1-9]{1}(([0-9]{2}){4})|\+[1-9]{2,3}(([0-9]{2}){4})|([0-9]{2}([\ \.-][0-9]{2}){4})/;
-	return $('body').html().match(phoneNumberRegex);
+	var phoneNumberRegex = /0[1-9]{1}(([0-9]{2}){4})|\+[1-9]{2,3}(([0-9]{2}){4})|([0-9]{2}([\ \.-][0-9]{2}){4})/igm;
+	return jQuery.unique( $('body').html().match(phoneNumberRegex));
 }
 
 chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {

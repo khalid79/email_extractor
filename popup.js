@@ -39,7 +39,7 @@ $(document).ready(function(){
 			if(response != null && response.data != null){
 
 				emails = response.data;	
-		  		$('#contactEmail').val(emails.join(' '));
+		  		$('#contactEmail').val(emails.join(','));
 				chrome.browserAction.setBadgeText({'text': String(emails.length)});
 			}else{
 				$('#contactEmail').val("email not found");
@@ -59,7 +59,7 @@ $(document).ready(function(){
 			if(response != null && response.data != null){
 
 				phones = response.data;	
-		  		$('#contactPhoneNumber').val(phones.join(' '));
+		  		$('#contactPhoneNumber').val(phones.join(','));
 			}else{
 				$('#contactPhoneNumber').val("phone number not found");
 			}

@@ -26,9 +26,11 @@ $(document).ready(function(){
 
 	// FIXME : Execute when the ationbrowser(icon) was clicked (not tab)
 	chrome.tabs.getSelected(null, function(tab) {
-    	
+
 		console.log("chrome.tabs.getSelected");
 		
+		chrome.browserAction.setBadgeText({'text': "..."});
+
 		// fill source from  
     	$('#source').val(tab.url);
 
@@ -88,7 +90,7 @@ $(document).ready(function(){
 						emails = response.data;	
 				  		$('#contactEmail').val(emails.join(','));
 						chrome.browserAction.setBadgeText({'text': String(emails.length)});
-						if(emailsFromSelection.length>0)
+						if(emails.length>0)
 							chrome.browserAction.setBadgeBackgroundColor({color: "#32cd32"});
 					}else{
 						$('#contactEmail').val("email not found");
